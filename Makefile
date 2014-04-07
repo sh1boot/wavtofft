@@ -1,9 +1,8 @@
-CFLAGS=-march=armv7-a -mfpu=neon -O3 -pedantic -std=c99 -Wall -ffast-math
-LDFLAGS=-lm -lsndfile -lfftw3
+CFLAGS=-O3 -pedantic -std=c99 -Wall -ffast-math -lm -lsndfile -lfftw3
 TARGET=wavtofft
 
 $(TARGET): $(TARGET).c
-	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $@
+	$(CC) $< $(CFLAGS) -o $@
 
 clean:
 	rm -f $(TARGET) *.o
