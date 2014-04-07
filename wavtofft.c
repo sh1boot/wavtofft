@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
                     if (x < y)
                         x = y;
                 }
-                x = log10(x * 2.0) / 2.0 * 20.0 - log10(length) * 20.0;
+                x = log10(x) / 2.0 * 20.0 - log10(length * 0.5) * 20.0;
                 fprintf(outfile, " %lf", x);
             }
             fprintf(outfile, "\n");
